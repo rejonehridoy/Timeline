@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.timeline">
+
+    <application
+        android:name=".OfflineFirebase"
+        android:allowBackup="true"
+        android:icon="@drawable/timeline"
+        android:label="@string/app_name"
+        android:roundIcon="@drawable/timeline"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".AdminDeleteUserDetails"
+            android:windowSoftInputMode="stateHidden" />
+        <activity android:name=".AdminDeleteUser" />
+        <activity
+            android:name=".AdminTaskDetails"
+            android:windowSoftInputMode="stateHidden" />
+        <activity android:name=".AdminProjectDetails" />
+        <activity android:name=".AdminProjects" />
+        <activity android:name=".AdminAppReleasesNew" />
+        <activity
+            android:name=".AdminAppReleaseDetails"
+            android:windowSoftInputMode="stateHidden" />
+        <activity android:name=".AdminAppReleases" />
+        <activity
+            android:name=".AdminFeedbackDetails"
+            android:windowSoftInputMode="stateHidden" />
+        <activity android:name=".AdminFeedback" />
+        <activity
+            android:name=".AdminUserDetailsEdit"
+            android:windowSoftInputMode="stateHidden" />
+        <activity android:name=".AdminUserDetails" />
+        <activity android:name=".Aboutus" />
+        <activity android:name=".Feedback" />
+        <activity android:name=".CheckUpdate" />
+        <activity android:name=".DeleteAccountConfirmation" />
+        <activity android:name=".Settings" />
+        <activity android:name=".NotesDetails" />
+        <activity android:name=".NotesCreate" />
+        <activity android:name=".Notes" />
+        <activity
+            android:name=".TaskDetails"
+            android:windowSoftInputMode="stateHidden" />
+        <activity android:name=".TaskCreate" />
+        <activity android:name=".ProjectDetails" />
+        <activity android:name=".ProjectNew" />
+        <activity android:name=".Projects" />
+        <activity
+            android:name=".AdminNoticeDetails"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name=".NoticeDetails"
+            android:windowSoftInputMode="stateHidden" />
+        <activity android:name=".AdminNoticeCreate" />
+        <activity android:name=".AdminNotice" />
+        <activity android:name=".AdminDashboard" />
+        <activity android:name=".AdminLogin" />
+        <activity android:name=".Notice" />
+        <activity android:name=".ActivityEdit" />
+        <activity
+            android:name=".ActivityView"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name=".PasswordManagerDetails"
+            android:windowSoftInputMode="stateHidden" />
+        <activity android:name=".ProfileEdit" />
+        <activity android:name=".History" />
+        <activity android:name=".PasswordVerification" />
+        <activity android:name=".PasswordManager" />
+        <activity
+            android:name=".AddNewPassword"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name=".Profile"
+            android:windowSoftInputMode="stateHidden" />
+        <activity android:name=".Activity" />
+        <activity android:name=".Home" />
+        <activity android:name=".ResetPassword" />
+        <activity android:name=".RecoveryAccount" />
+        <activity android:name=".Signup" />
+        <activity android:name=".Login" />
+        <activity android:name=".WelcomeScreen">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
+    </application>
+
+</manifest>

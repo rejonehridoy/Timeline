@@ -1,0 +1,785 @@
+	
+_______________________TimeLine________________Total SP: 223
+
+0. Create Database	SP :24
+	0.1 Create Database Helper class and create every table creation query		[5][DONE]
+	0.2 Create a class of named database which will have all table as class and attribute will be columns name	[4][DONE]
+	0.3 Create insert ,update,delete query of every feature			[10][DONE]
+	0.4 Create Firestore project and add into this project		[2][DONE]
+		0.4.1 add dependency,add offline mode			[1][DONE]
+		0.4.2 create userDetails table into firestore and realtime database,connect into sign up page	[2][DONE]
+
+
+1. Splash Screen		SP : 2
+	1.1 Implement splash scree in opening page when app logo should be there with app name and it should not be more then 5 seconds.afer showing that home login page should come.	[2][DONE]
+
+
+2. Login Screen			SP : 10
+	2.1 Have to check sharedpreference variable if the user has aleady logged in and checked remember me button in onCreate() method		[1][DONE]
+	2.2 There should two Edit boxes for username and password and Login button.	[1][DONE]
+	2.3 Radio button for remember me,if its checked then have to store username,pass in the sharedpreferance and next time this login page should not appear,direct home page will load.theres a sharePreferenced variable for Remember me named "RememberMe" = true	[1][DONE]
+	2.4 one forget password link button for reseting password	[1][DONE]
+	2.5 Signup button where user can create a new account		[1][DONE]
+	2.6 After pressing login button,
+		2.6.1 check two Edit text boxes whether they are empty		[1][DONE]
+		2.6.2 match username and password in the sharedpreference storage,if matched then home page should appear
+		2.6.3 if not found in the sharedpreference then match username,password in the [User table] from SQLite
+			Query: SELECT _id,FullName,UserName,Password FROM UserDetails WHERE UserName = ? and Password = ?	[2]
+		2.6.4 and then stored the username and password in sharedpreference variable named "UserName" and "Password" and "IsLoggedin" and "FullName" and "Email" 		[1][DONE]
+			
+		2.6.5 after every checking passed then home page will appear		[1][DONE]
+
+
+
+
+
+3. SignUP Screen		SP: 8
+	3.1 Edit Text for FullName,UserName,Email,Password,Recovery Ans,[Radio Group for Gender],Button for Signup,Spinnar for Recovery Question[2][SEMI_DONE]
+	3.2 check validation for all empty Edit Text box and radio group	[1][DONE]
+	3.3 create SQLite database and UserDetails Table with proper columns and constrains	[2]
+	3.4 checking any duplicate username from Cloud Firestore		[2][DONE]
+	3.5 Check password length,it should be more then 4 characters		[1][DONE]
+	3.5 After checking all constrains all info should be stored SQLite UserDetails table	[1]
+	3.6 Data should be also stored in Firestore using same procedure,here username will be primary key	[1][DONE]
+	
+
+
+
+4. Recovery Account		SP: 11	
+	4.1 Edit Text box for UserName,Email,FullName,Recovery Ans,Button for Search,Submit,TextView for Recovery Question	[2][DONE]
+	4.2 Check Validation for all empty Text boxes	[1][DONE]
+	4.3 Search data in SQLite Database		[2]
+		Query : SELECT _id,UserName,Email,FullName,RecoveryQuestion,RecoveryAns FROM UserDetails WHERE UserName LIKE '%?%' AND Email LIKE '%?%' AND FullName LIKE '%%'
+	4.4 if any data is found then set visibility true for TextView for Recovery Question and Set the question and Set visibility true for Recovery Ans Edit box		[2][DONE]
+	4.5 if any data is not found then show information using Toast/Alert Dialogue "User nor found.please give accurate data"	[1][DONE]
+	4.6 If Recovery ans is not matched then show info using Toast "Wrong ANS.You are not the real user of this account"		[1][DONE]
+	4.7 If ans is matched then new screen will appear named Reset Password and pass the _id,UserName to intent		[2][DONE]
+
+
+
+5. Reset Password		SP: 7
+	5.1 Edit Text for Password,Button for submit		[1][DONE]
+	5.2 Check empty Edit box and length of password,it should should not be less then 8 characters	[1]
+	5.3 Update the new password in the SQLite corresponding to userid and set RecoveryDate column with current DateTime	[2]
+		Query : UPDATE UserDetails SET Password = '?' and RecoveryDate = '?' WHERE _id = ?
+	5.4 Update the new password in the Cloud FireStore with UserName and update the RecoveryDate column with current DateTime	[1][DONE]
+	5.5 After show a Toast/Alert Dialgoue "Successfully Changed Password"		[1][DONE]
+	5.6 Go to Login through intent		[1][DONE]
+
+
+6. Home				SP : 9 [DONE]
+	6.1 Implement action bar with app theme color		[2][DONE]
+	6.2 Side menu option with Feedback,About,Admin,Logout	[1][DONE]
+	6.3 Implement 7 features with cardview named Activity,Password Manager,Profile,History,Notice,settings,event timer,project	[2][DONE]
+	6.4 Add clickable option of cardview	[1][DONE]
+	6.5 Add action listner of cardview	[1][DONE]
+	6.6 add restriction feature for different kinds of users(Basic,Pro,Admin)	[2][DONE]
+
+
+
+7. Activity		SP : 21
+	7.1
+	wacthing => movie/series => year  =>language => review =>additional notes	[2]
+	eating	=> burger/kacchi => =>snakes/lunch/dinner => place => price => review	[2]
+	playing => pubg/cs:go/fifa/valorant etc => classic/Tournament => your team,oponent team =>result =>notes [2]
+	working => title => notes =>status:done/in progress	[2]
+	reading => subjectname => notes		[2]
+	writing => title => notes => status:done/in progress	[2]
+	solving => problemName- =>category-uva,codeforces,lightoj => lang-C++,java =>status-AC/WA/TLE =>notes	[2]
+	attending => functionname => place => notes		[1]
+	wasting time =>			[1]
+	7.2 basic empty edit box validation must be required like name,category etc	[2]
+	7.3 after checking constrains data should be inserted in the database		[3]
+
+
+
+8. Password Manager		SP : 13	[DONE]
+	8.1 Spinner -> Account Name,Editbox -> Username,Email,Phone,Password,priority,additional notes,submit	[1][DONE]
+	8.2 design xml file of single item. use cardview,imageview,textview for username/email,account name		[1][DONE]
+	8.3 fetch data from SQLite and show into recycle view		[2][DONE]
+	8.4 desgin account logo,and account holder name in custome spinner view		[2][DONE]
+	8.5 show activity in after clicking item on recycle view	[3][DONE]
+		8.5.1 Each data should be showed
+		8.5.2 Password would be showed as encrypted from/real form
+		8.5.3 There must be a copy button,where original password will copy in the clipboard
+		8.5.4 there will be a edit button to edit
+	8.6 After edit button clicked all text field will be enabled,and account name spinner will show		[1][DONE]
+	8.7 after verification of text field,all data will updated in SQLite database		[3][DONE]
+
+
+9. Profile		SP : 10	[DONE]
+	9.1 Design of profile page with editTextinput,button	[2][DONE]
+	9.2 After clicking edit password new activity will appear and before that password verification will be required	[1][DONE]
+	9.3 All detalis will show in input text box,gender will show in spinner,avater name will be show in spinner,new password,retype password will be also there.	[2][DONE]
+	9.4 check the verification of all textboxes without new pass,retype pass(optional),if new password is not empty,then new password must be matched with retype password	[2][DONE]
+	9.5 after clicking update button, all data will be updated in SQLite database and also in Firestore database	[3][DONE]
+
+
+10. History		SP : 17
+
+	10.1 Design bottom navigation fragment option with : All,Analysis	[1][DONE]
+	10.2 design recyle view with with search tool bar option		[1][DONE]
+	10.3 design history_item.xml for each activity type according this:	[3][DONE]
+	watching => movie -> name [year,if has space],(category,language),(date,review)
+		 => Drama/Tv series -> name, (category, Sea/Epi: 1/2), (date, review)
+		=> Youtube video -> name, (Category,duration), (date,review)
+
+	eating => name, (place[at], price), (date, review)
+	playing => Fifa =>  name [year if has space],(Your team,result,opponent team) , (date, place)
+		=> football => name ,(Your team,result,opponent team) , (date, place)
+		=> cricket =>name ,(Your team,opponent team) , (date, status)
+		=> other => name, (Category, opponent team/duration/place), (date, status)
+	working => name, (category, duration[from 1 hour 25 min]/place), (date, status)
+	solving => name, (Difficulty, duration[from 1 hour 25 min]), (date, result)
+	attending => name, (place[at], category), (date, status)
+	reading => name, category, (duration/place), (date, status/review)
+	writing => name, (category, language/duration), (date, status)
+	buying => name, (category,price),(date,place[from])
+	wasting time => name, (place, duration), (date, result)
+
+	10.4 design second part "Analysis" with cardView	[1]
+	10.5 design 2 section for last 7 days and overall	[1]
+	10.6 desgin for "last 7 days"	[5][Done]
+		10.6.1 watching => (no of Movies, TV series/Drama, Other) , (duration, total cost) 	
+		10.6.2 eating => (no of distinct items,no of place/max no of food name), (duration,total cost)
+		10.6.3 working => (no of items of work, duration of work, no of complete work)
+		10.6.4 playing => (no of distinct game played, most played game), (no of matches of most played game,win/lose), (total win ratio,duration)
+		10.6.5 reading => (no of books,most readed category), (total cost,duration)
+		10.6.6 solving => (no of problems,most used language,no of AC) (solving ratio,duration)
+		10.6.7 writing => (no of write,no of complete), (most used language,duration) 
+		10.6.8 buying => (no of items, total cost)
+		10.6.9 attending => no of function, duration
+		10.6.10 wasting time => positive result ration, duration
+	10.7 design for overall data	[5]
+		10.6.1 watching => (no of Movies, TV series/Drama, Other) , (duration, total cost) 
+		10.6.2 eating => (no of distinct items,no of place/max no of food name), (duration,total cost)
+		10.6.3 working => (no of items of work, duration of work, no of complete work)
+		10.6.4 playing => (no of distinct game played, most played game), (no of matches of most played game,win/lose), (total win ratio,duration)
+		10.6.5 reading => (no of books,most readed category), (total cost,duration)
+		10.6.6 solving => (no of problems,most used language,no of AC) (solving ratio,duration)
+		10.6.7 writing => (no of write,no of complete), (most used language,duration) 
+		10.6.8 buying => (no of items, total cost)
+		10.6.9 attending => no of function, duration
+		10.6.10 wasting time => positive result ration, duration
+	
+	10.8 Aggregation query of history analysis where every particular query must be accurate and show in the display	[7]
+
+
+11. Edit Profile	SP : 8
+	11.1 edit textbox for full name,phone,new password,retype password and spinner for avater,gender,recoveryQuestion,button for submit [2][DONE]
+	11.2 check the avater code from database and set in the image view and spinner. string to image and image to string convertion must be included  [1][DONE]
+	11.3 check verification of all edit text boxes. if new password is empty then it should not give any error .but if new password box is filled and retype password box is empty or didn't match with new password then it should be give an error message	[1][DONE]
+	11.4 afer checking update the info into the SQLite database of "UserDetails" table  [2]
+	11.5 also update the info in sharedpreference		[1][DONE]
+	11.6 also update the info into Firestore database	[1][DONE]
+
+
+12. PasswordManagerDetails and edit	SP : 7	[DONE]
+	12.1 Editboxes and spinner and buttons		[1][DONE]
+	12.2 if isEditedMode is false then then user can only read,so every textbox should be disabled [1][DONE]
+	12.3 if isEditedMode is true then user can edit text boxes	[1][DONE]
+	12.4 Validation required for edit boxes[can not be empty editbox]	[1][DONE]
+	12.5 After clicking submit data will be updated in database corresponding to id	[2][DONE]
+	12.6 after pressing delete button ensure alert diagloue will appear,if user press yes,then data will be deleted from database corresponding to id	[2][DONE]
+
+
+
+13. ActivityView		SP : 7		[DONE]
+	13.1 14 textboxes and 2 buttons		[2][DONE]
+	13.2 after clicking edit button data will be in edited mode in new activity.pass the require data to new activity like "activity name","category"	[2][DONE]
+	13.3 pressing delete button alert dialogue will show for confiramtion,after clicking yes,data will be delete from database corresponding to id	[3][DONE]
+
+
+14. Activity Edit	SP : 13		[DONE]
+	14.1 there should be 15 Edit boxes, 4 spinner and 1 button	[2][DONE]
+	14.2 data should be replace according to their certain activityName	[3][DONE]
+	14.3 every activity contrains must be preserved		[3][DONE]
+	14.4 some basic edit text validation required like name,category,date		[2][DONE]
+	14.5 After checking constrains data should update into database with corresponding to id   [3][DONE]
+
+
+15. Notice	SP : 7	[DONE]
+	15.1 there should be 2 tab Notices,Settings	[1][DONE]
+	15.2 in notices tab recylerview to show notices		[1][DONE]
+	15.3 in notices tab info should be like			[1][DONE]
+		15.3.1 Subject,CreatedDate,tag
+	15.4 clicking particular item info should
+		15.4.1 Subject,description,category,eventDate,eventTime,tag,NoticeCreator,createdDate,modifiedDate,modifier,visible,repetaion(once/weekly)[dayofweek],Link	[2][DONE]
+		15.4.2 if there is a list then they should be show below	[2][DONE]
+		15.4.3 data will fetch from firebase according to tag		[2][DONE]
+
+
+
+16. Project or Thesis		SP : 28		[DONE]
+	16.1 Opening page of showing all projects in recyle view with porper information	[3][DONE]
+		1.1 search functionality will available
+		1.2 floating button for adding new project
+	16.2. Second page with add new project/thesis		[2][DONE]
+		16.2.1 Project name Edit box,searching member for input box,spinner role(leader,co leader,member),button for add new member,category edit box for what type of porject, description edit box,Framework editbox, platform editbox, Requirement editbox, prequisite editbox,submit button
+	16.3. Project details page after clicking project of opening page
+		3.1 bottom navigation option of "Tasks","info","Settings"	[2][DONE]
+		3.2 in tasks tab recyleview will show all tasks in that particular project,and there will be a floating button for add new task		[2][DONE]
+			3.3.1 after clicking specific item of task in 3.2, there will be a new activity where
+			3.3.2 will show TaskName, Task description, Tasksolution, TaskDeadline, Task assigner(who will complete the task), status(complete,in progress,incomplete),button for edit task, delete task(if leader)		[2][DONE]
+			3.3.3 in edit task, all info will show in edit boxes,and will be save option	[2][DONE]
+			3.3.4. after clicking save all data will update in the firestore and will track who will edited that task	[2][DONE]
+		3.3 in settings tab, there will be edit box for assigning new member in project, will be a spinner for showing all member without leader,and will be a delete member option,button for delete project(if leader)		[2][DONE]
+	16.4 Project can be edited by only project creator/leader/co-leader/manager	[2][DONE]
+	16.5 Member adding constrains: only those member can add who is not in the project already	[2][DONE]
+	16.6 Member updating constrains : only role can be update. A user can not upadte his own role.	[2][DONE]
+	16.7 Member deleting constrains : a member can not delete himself. a leader/co-leader/manager can only delete other members	[1][DONE]
+	16.8 Only project creator,leader/co-leader/manager can delete the whole project		[1][DONE]
+		16.8.1 After pressing delete project button a project will delete from firestore table "Projects"		[1][DONE]
+		16.8.2 Every tasks corresponding to the project that is going to be delete also will be delete from firestore "tasks" tables	[1][DONE]
+		16.8.3 members of the that project also be deleted from firestore "Members" table		[1][DONE]
+
+
+17. Admin Notice	SP : 3 [DONE]
+	17.1 Here a list will show of recylerview and flotingAction button	[1][DONE]
+	17.2 all data will fetch from firebase		[2][DONE]
+	
+18. Admin Notice Details	SP : 7  [DONE]
+	18.1 text fields and spinner for suitable items		[2][DONE]
+	18.2 There will be edit button,delete button and update button.		[1][DONE]
+	18.3 Only admin/creator of the notice can edit and delete	[1][DONE]
+	18.4 after edited data will update in the firebase accroding to constrains	[1][DONE]
+	18.5 After editing data text boxes will be disabled	[1][DONE]
+	18.6 after deleting the notice,data will be delete from firebase also,will finish the activity	[1][DONE]
+
+
+19. Admin Notice Create		SP : 4 [DONE]
+	19.1 text fields and spinner for suitable items and submit buttons	[2][DONE]
+	19.2 check the empty field contrains		[1][DONE]
+	19.3 pressing submit button all data will store in the firebase		[1][DONE]
+
+
+____________Tables for this___________
+
+_________Project__________
+-id   primary key
+-name
+-category
+-description
+-framework
+-platform
+-requirement
+-prerequisite
+-status (Not Started,In Progress,Completed,incompleted,Cancelled)
+-startingDate
+-endDate
+-modifiedUser
+-modifiedDate
+-createdDate
+-createdUser
+-totalTasks
+-totalTaskPoints
+-completedTasks
+-modifiedVersion
+-completedTaskPoints
+
+
+________MembersProject__________
+-pid
+-mid 	primary key
+-projectName
+-memberUserName
+-memberFullName
+-role		leader,co-leader,manager,developer,member
+
+
+_______Releases________
+-rid
+-pid
+-releaseVerison
+-description
+-releaseDate
+-issues
+-link
+-status		(Unreleased,Released)
+
+
+________Tasks________________
+-tid  primary key
+-pid
+-name
+-serial
+-category	(Task,epic,story,bug)
+-description
+-solution
+-deadline
+-assigner
+-points
+-issues
+-link
+-status		Done,Working,To Do,Cancelled
+-priority	Urgent,High,Medium,Low
+-modifiedDate
+-modifiedUser
+-createdDate
+-createdUser
+-comments
+
+first page => recylerview with all prjects,floating button for new
+second page => 	tasks => all tasks recyler view with add task floating button(after clicking details with edit option)
+		Info =>	project details with edit button
+		Settings =>add members(name,role) member details with recyler view(fullname,username,role)
+third page => create task form
+
+
+
+__________________Sharedpreference Variable__________
+isLoggedin => true/false to check user has already loggedin
+rememberMe => true/false to check next time after oppening the app,user will direct to home page if true
+userName => for UserName
+password => for Password
+fullName => for user's Full name
+phone =>
+userType =>
+email => for user Email
+tag =>
+
+
+
+
+
+
+
+
+
+________________________DATABASES(Timeline.db)____________________________
+
+
+_______UserDetails______
+-_id PRIMARY KEY AUTOINCREMENT
+-uid 	for firebase
+-userName varchar(50)	[PrimaryKey for Firestore]
+-fullName TEXT
+-email TEXT
+-password TEXT
+-phone TEXT
+-gender varchar(10)
+-dateOfBirth
+-avaterCode
+-status			active/Temporary/disable/verified
+-userType varchar(10)	user/admin/moderator/content writter
+-createdDate varchar(25)
+-recoveryQuestion TEXT
+-recoveryAns TEXT
+-recoveryDate varchar(25)
+-lastVisit
+
+
+_______Activity_____________
+-_id
+-userName
+-activityType	
+-name		
+-category	
+-place		
+-price
+-duration (in minutes)
+-year		
+-yourTeam
+-opponentTeam
+-language	
+-review
+-notes
+-status		
+-date
+-time
+-dayOfWeek	current dayof week
+-result
+-modifiedDate
+-backup
+
+___________PasswordManager__________
+-_id
+-userName
+-accountName
+-accountLogo
+-accountUserName
+-accountEmail
+-accountPhone
+-accountPassword
+-accountPriority
+-accountNotes
+-accountCreateDate
+-accountModifiedDate
+
+
+__________Notes____________
+-_id
+-userName
+-subject
+-description
+-date
+-time
+-dayOfWeek
+-modifiedDate
+-favoruite
+-backup
+
+
+
+
+____________SocialMediaAccount__________
+-_id
+-Name TEXT
+-Logo int
+-Priority
+
+
+_________Tag__________
+-_id
+-userName
+-tagName
+-usedDate
+
+
+
+___________Firebase tables_________
+________Notices_________
+-id primary key
+-visible	Yes,No
+-subject
+-category
+-description
+-eventDate
+-eventTime
+-tag
+-repetation
+-dayofweek
+-link
+-creator
+-createdDate
+-modifier
+-modifiedDate
+
+
+
+____________Evalution__________Completed: 186, Remaining: 30
+01 July 2020 => [10]  1, 2.2, 2.4, 2.5, 2.6.1, 3.1, 3.2, 3.5
+02 July 2020 => [3]  4.1,5.1
+03 July 2020 => [7] 6.1, 6.2, 6.3, 6.4, 6.5
+04 July 2020 =>	[16] 7.1
+05 July 2020 => [2]   9.1
+06 July 2020 => [4] 8.1, 8.2, 8.4
+07 July 2020 => [5] 10.1, 10.2, 10.3
+08 July 2020 => [5] 10.5
+09 July 2020 => [11] 11.1, 11.2, 11.3, 11.5, 11.6, 5.4, 5.5, 5.6
+10 July 2020 => [7] 12.1, 12.2, 12.3, 13.1, 14.1
+11 July 2020 =>	[6] 14.2, 15.1, 15.2, 15.3
+12 July 2020 => [7] 17.1, 18.1, 18.2, 18.3, 19.1
+13 July 2020 => [15] 16.1, 16.2, 16.3.2, 9.2, 9.3, 9.4, 9.5
+14 July 2020 => [11] 16.3.1, 16.3.3, 16.4, 16.5, 16.6, 16.7
+15 July 2020 => [18] 15.4.1, 15.4.2, 15.4.3, 17.2, 18.4, 18.5, 18.6, 19.2, 19.3, 2.1, 2.3, 2.6.4, 2.6.5, 3.6
+16 July 2020 => [12] 0.4, 4.5, 4.6, 4.7
+17 July 2020 => [6] 16.3.3.2, 16.3.3.3, 16.3.3.4
+18 July 2020 => [4] 16.8
+19 July 2020 =>	[14] 0.1,0.2, 12,4, 12.5, 12.6
+20 July 2020 => [23] 0.3, 13.2, 13.3, 14.3, 14.4, 14.5
+
+
+
+flaticon id:
+softwaredevelopment2200@gmail.com
+pass : SoftwareDevelopment@2200
+
+<View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@android:color/darker_gray"/>
+
+___________Toasty____________
+This step is optional, but if you want you can configure some Toasty parameters. Place this anywhere in your app:
+
+Toasty.Config.getInstance()
+    .tintIcon(boolean tintIcon) // optional (apply textColor also to the icon)
+    .setToastTypeface(@NonNull Typeface typeface) // optional
+    .setTextSize(int sizeInSp) // optional
+    .allowQueue(boolean allowQueue) // optional (prevents several Toastys from queuing)
+    .apply(); // required
+
+You can reset the configuration by using reset() method:
+
+Toasty.Config.reset();
+
+
+1. To display an error Toast:
+Toasty.error(yourContext, "This is an error toast.", Toast.LENGTH_SHORT, true).show();
+
+2. To display a success Toast:
+Toasty.success(yourContext, "Success!", Toast.LENGTH_SHORT, true).show();
+
+3. To display an info Toast:
+Toasty.info(yourContext, "Here is some info for you.", Toast.LENGTH_SHORT, true).show();
+
+4. To display a warning Toast:
+Toasty.warning(yourContext, "Beware of the dog.", Toast.LENGTH_SHORT, true).show();
+
+5. To display the usual Toast:
+Toasty.normal(yourContext, "Normal toast w/o icon").show();
+
+6. To display the usual Toast with icon:
+Toasty.normal(yourContext, "Normal toast w/ icon", yourIconDrawable).show();
+
+7. You can also create your custom Toasts with the custom() method:
+Toasty.custom(yourContext, "I'm a custom Toast", yourIconDrawable, tintColor, duration, withIcon, 
+shouldTint).show();
+
+
+intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);	//clear all background activity
+_____________Image Chooser_______________
+Uri uriProfileImage;
+private void ImageChooser()
+{
+	Intent intent = new Intent();
+	intent.setType("image/*");
+	intent.setAction(Intent.ACTION_GET_CONTENT);
+	startActivityForResult(Intent.createChooser(intent,"Select profile image"),101);
+
+}
+
+@Override
+private void onActivityResult(int requestCode,int resultCode,Intent data){
+	super.onActivityResult(requestCode,resultCode,data);
+	if(requestCode == 101 && resultCode == RESULT_OK && data != null && data.getData() !=null){
+		uriProfileImage = data.getData();
+
+		try{
+
+		Bitmap bitmap = MediaStore.Images.Media.getBitmap(getContentResolver(),uriProfileImage);
+		imageView.setImageBitmap(bitmap);
+		uploadImageToFirebaseStorage();
+		}catch(Exception e){
+			e.printStackTrace();
+		}
+	}
+
+}
+
+private void uploadImageToFirebaseStorage(){
+	StorageReference ref = FirebaseStorage.getInstance().getReference("profilePics/"+System.currentTimeMillis()+".jpg");
+	
+	//progressbar visible
+	if(uriProfileImage != null){
+		ref.putFile(uriProfileImage).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>(){
+			onSuccess(UploadTask.TaskSnapshot taskSnapshot){
+				//progrssbar visible off
+				String imageUrl = taskSnapshot.getDownloadUrl().toString();
+			}
+
+		});
+
+	}
+
+
+}
+
+_________________Check Validation__________
+private Boolean check_validation(TextInputLayout field) {
+
+        if (field == null || field.getEditText() == null || field.getEditText().getText().toString().isEmpty()) {
+            field.setError("Field cannot be empty");
+            return false;
+        } else {
+            field.setError(null);
+            field.setErrorEnabled(false);
+            return true;
+        }
+    }
+
+
+__________________________Save Sharedpreference Data__________________
+SharedPreferences.Editor editor;
+                        SharedPreferences sharedPreferences = getSharedPreferences("UserDetails", Context.MODE_PRIVATE);
+                        editor = sharedPreferences.edit();
+                        editor.putBoolean("isLoggedin",true);
+                        editor.putBoolean("rememberMe",remember);
+                        editor.putString("userName",name);
+			editor.putString("uid",uid);
+                        editor.putString("fullName",fullName);
+                        editor.putString("email",email);
+                        editor.putString("password",pass);
+                        editor.putString("phone",phone);
+                        editor.putString("gender",gender);
+                        editor.putString("dateOfBirth",dateOfBirth);
+                        editor.putString("avaterCode",avaterCode);
+                        editor.putString("status",status);
+                        editor.putString("userType",userType);
+                        editor.putString("createdDate",createdDate);
+                        editor.putString("recoveryQuestion",recoveryQuestion);
+                        editor.putString("recoveryAns",recoveryAns);
+			editor.putString("tag",str_tag);
+			editor.putString("appVersion",str_tag);
+			editor.putString("appVersionType",str_tag);
+                        editor.apply();
+
+________________________Get Sharedpreference Data______________
+private void get_user_info(){
+        SharedPreferences sharedPreferences = getSharedPreferences("UserDetails", Context.MODE_PRIVATE);
+        Boolean isLoggedin = sharedPreferences.getBoolean("isLoggedin",false);
+        if (isLoggedin && sharedPreferences.contains("uid") && sharedPreferences.contains("userName")) {
+            uid = sharedPreferences.getString("uid","");
+            userName = sharedPreferences.getString("userName","");
+            userType = sharedPreferences.getString("userType","");
+            userstatus = sharedPreferences.getString("status","");
+            //userPassword = sharedPreferences.getString("password","");
+            userEmail = sharedPreferences.getString("email","");
+            userFullName = sharedPreferences.getString("fullName","");
+
+        }else{
+            this.finish();
+            Toasty.error(getApplicationContext(),"User didn't log in",Toasty.LENGTH_LONG).show();
+        }
+    }
+
+________________________Get current Date___________________
+public String get_current_Date(){
+        SimpleDateFormat formatter = new SimpleDateFormat("dd-MM-yyyy hh:mm a");
+        //SimpleDateFormat formatter = new SimpleDateFormat("dd-MM-yyyy");
+        Date date = new Date();
+        return formatter.format(date);
+
+    }
+
+________________How to determine day of week by passing specific date?____________
+
+Calendar c = Calendar.getInstance();
+c.setTime(yourDate);
+int dayOfWeek = c.get(Calendar.DAY_OF_WEEK);
+
+
+______________Check Internet Connectivity______________
+public boolean check_internet_connection(){
+        ConnectivityManager connectivityManager = (ConnectivityManager) getApplicationContext().getSystemService(Context.CONNECTIVITY_SERVICE);
+        NetworkInfo activeNetwork = connectivityManager.getActiveNetworkInfo();
+        if (activeNetwork != null){
+            if(activeNetwork.getType() == ConnectivityManager.TYPE_WIFI){
+                //Toast.makeText(this,"Wifi Connected",Toast.LENGTH_LONG).show();
+
+            }else if (activeNetwork.getType() == ConnectivityManager.TYPE_MOBILE){
+                //Toast.makeText(this,"Mobile Network Connected",Toast.LENGTH_LONG).show();
+            }
+            return true;
+        }else{
+            //Toast.makeText(this,"No Internet Connection",Toast.LENGTH_LONG).show();
+            return false;
+        }
+    }
+
+____________________Encyption__________________
+private String encrypt_password(String password){
+        try {
+            return EncryptionDecryption.SecurityEncryption.encrypt(password, EncryptionDecryption.SecurityEncryption.KEY_PASSWORD);
+        }catch (Exception e){
+            return password;
+        }
+    }
+
+__________________Decryption______________________
+private String decrypt_password(String pass){
+        try {
+            return EncryptionDecryption.SecurityEncryption.decrypt(pass, EncryptionDecryption.SecurityEncryption.KEY_PASSWORD);
+        }catch (Exception e){
+            return pass;
+        }
+
+    }
+
+_____________________Alert Dialogue_______________________
+private void complete_button_Dialog() {
+        AlertDialog.Builder alertDialogBuilder;
+        alertDialogBuilder = new AlertDialog.Builder(this)
+                .setTitle("Delete Activity")
+                .setMessage("Are you sure to delete this activity? If deleted it can not be undone")
+                .setIcon(R.drawable.ic_delete_forever_red)
+                .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        //Yes button clicked
+                        //update work completion info in request table
+                        update_work_completion();
+
+
+                    }
+                }).setNegativeButton("No", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        //No button clicked
+                        dialog.cancel();
+                    }
+                });
+
+        AlertDialog alertDialog = alertDialogBuilder.create();
+        alertDialog.show();
+
+    }
+_____________________Firebase Realtime update__________
+DatabaseReference db = FirebaseDatabase.getInstance().getReference().child("UserDetails");
+db.child(userName).child("fullName").setValue(fullName.getEditText().getText().toString());
+
+_____________________Firestore Update_______________
+DocumentReference document = FirebaseFirestore.getInstance().collection("UserDetails").document(userName);
+document.update("fullName", fullName.getEditText().getText().toString().trim());
+
+
+____________________Firestore delete a document___________________
+db.collection("cities").document("DC")
+        .delete()
+        .addOnSuccessListener(new OnSuccessListener<Void>() {
+            @Override
+            public void onSuccess(Void aVoid) {
+                Log.d(TAG, "DocumentSnapshot successfully deleted!");
+            }
+        });
+
+___________________Date format__________________
+private String convert_ModifiedDate_format(String DateTime){
+        // 22-08-2020 Wed 05:34 PM
+        if (!DateTime.isEmpty()){
+            String localDate = DateTime.substring(0,10);
+            String localTime = DateTime.substring(14,23);
+            String day = DateTime.substring(10,14);
+            if (localDate.equals(get_current_Date())){
+                return "Today at "+localTime;
+            }
+            try {
+                DateFormat originalFormat = new SimpleDateFormat("dd-MM-yyyy", Locale.ENGLISH);
+                DateFormat targetFormat1 = new SimpleDateFormat("dd-MM-yyyy");
+                DateFormat targetFormat2 = new SimpleDateFormat("MMMM dd");
+                DateFormat targetFormat3 = new SimpleDateFormat("MMMM dd, yyyy");
+                Date date = originalFormat.parse(localDate);
+                if (localDate.contains(String.valueOf(Calendar.getInstance().get(Calendar.YEAR)))){
+                    return targetFormat2.format(date)+","+day+" at "+localTime;
+                }else{
+                    return targetFormat3.format(date)+","+day+" at "+localTime;
+                }
+
+
+            }catch (Exception e){
+                Log.d("ERROR",e.getMessage());
+            }
+        }
+
+
+        return DateTime;
+    }
+
+________________Save into Clipboard text______________
+ClipboardManager clipboard = (ClipboardManager) getSystemService(Context.CLIPBOARD_SERVICE);
+                    ClipData clip = ClipData.newPlainText("Link", link.getEditText().getText().toString().trim());
+                    clipboard.setPrimaryClip(clip);
+
+___________________Firebase realtime database delete_____________
+FirebaseDatabase.getInstance().getReference()
+                        .child("quotes").child(mPostKey).removeValue();
+
+
+______________Password Verfication target intent code_____________
+PasswordManager.java => 1
+EditProfile.java => 2
+DeleteAccountConfirmation =>3
+
+//format: july 22,2020, wed at 05:29 PM
+// 22-08-2020 Wed 05:34 PM

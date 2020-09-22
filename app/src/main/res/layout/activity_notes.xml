@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Notes">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.google.android.material.bottomnavigation.BottomNavigationView
+            android:id="@+id/notes_bottomNavigation"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:menu="@menu/notes_bottom_navigation"
+            android:layout_alignParentBottom="true"
+            android:elevation="8dp"
+            android:background="?android:attr/windowBackground"/>
+
+        <!-- Collection Section-->
+        <LinearLayout
+            android:id="@+id/notes_layout_collections"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="visible"
+            android:layout_marginBottom="56dp"
+            tools:visibility="gone"
+            android:orientation="vertical">
+
+            <include
+                android:id="@+id/notes_collections_toolbar"
+                layout="@layout/toolbar"/>
+
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/notes_collection_recylerView"
+                android:layout_width="match_parent"
+                android:layout_margin="4dp"
+
+                android:layout_height="wrap_content"/>
+
+
+        </LinearLayout>
+
+        <!-- Favourites Section-->
+        <LinearLayout
+            android:id="@+id/notes_layout_favorite"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:visibility="gone"
+            android:layout_marginBottom="56dp"
+            tools:visibility="visible">
+
+            <include
+                android:id="@+id/notes_favorite_toolbar"
+                layout="@layout/toolbar"/>
+
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/notes_favourites_recylerView"
+                android:layout_width="match_parent"
+                android:layout_margin="4dp"
+                android:layout_height="wrap_content"/>
+
+
+        </LinearLayout>
+
+
+    </RelativeLayout>
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/notes_btnAdd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        android:layout_marginBottom="88dp"
+        android:layout_marginRight="40dp"
+        android:src="@drawable/add_white" />
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

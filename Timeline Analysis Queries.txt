@@ -1,0 +1,106 @@
+_________Wactching:
+1. No of movies:
+select count(_id) from Activity where category like 'movie' and activityType like 'watching'
+
+2. No of TV series
+select count(_id) from Activity where category like 'tv series' and activityType like 'watching'
+
+3. others
+select count(_id) from Activity where category not in ('Movie','TV Series') and activityType like 'watching'
+
+4,5. Duration & Price
+select sum(duration) as TotalDuration,sum(price) as TotalCost from Activity where activityType like 'watching'
+
+
+__________Eating:
+1,2,4,5:
+select count(distinct lower(name)) as FoodItem,count(distinct lower( place)) as Place, sum(price) as TotalPricePrice,sum(duration) as TotalTime from Activity where activityType like 'eating'
+
+3. max eaten item:
+select name,count(name) as TotalNumber from Activity where activityType like 'eating' group by lower(name) order by TotalNumber desc limit 1
+
+
+___________playing:
+1. no of distinct game
+select count(distinct lower(name)) as DistinctGame from Activity where activityType like 'playing'
+
+2. max played game
+select name, count(name) as PlayedTimes from Activity where activityType like 'playing' group by lower(name) order by PlayedTimes desc limit 1
+
+3. matches of most played game
+select count(_id) as Matches from Activity where activityType like 'playing' and name like 'fifa'
+
+4. Win/Lose
+select count(_id) as NoOFWin from Activity where activityType like 'playing' and name like 'fifa' and status like 'win';
+select count(_id) as NoOfLose from Activity where activityType like 'playing' and name like 'fifa' and status like 'lose';
+
+5. win ratio : win/match*100
+
+6. total duration
+select sum(duration) as TotalDuration from Activity where activityType like 'playing'
+
+
+_________Working:
+1,2. total works,duration:
+select count(_id) as TotalWorks,sum(duration) as TotalDuration from Activity where activityType like 'working'
+
+3.complete work:
+select count(_id) as completeWorks from Activity where activityType like 'working' and status like 'completed'
+
+
+__________Reading:
+1. total books, 3. total cost, 4. totalDuration
+select count(distinct lower(name)) as TotalBooks,sum(price) as TotalPrice,sum(duration) as TotalDuration from Activity where activityType like 'reading'
+
+2. most read category
+select category,count(category) as CategoryNo from Activity where activityType like 'reading' group by category order by categoryNo desc limit 1
+
+
+
+__________Solving:
+1. no of problems, 5. duration
+select count(_id) as Problems,sum(duration) as TotalDuration from Activity where activityType like 'solving'
+
+2. most used language
+select language,count(language) as TotalNumber from Activity where activityType like 'solving' group by language order by TotalNumber desc limit 1
+
+3. no of accectped
+select count(_id) as Accepted from Activity where activityType like 'solving' and result like '%accepted%';
+
+4.solving ratio
+problems/accepted*100
+
+
+__________Writing:
+1.items  3. duration
+select count(_id) as TotalItems,sum(duration) as TotalDuration from Activity where activityType like 'writing'
+
+2.completed
+select count(_id) as TotalItems from Activity where activityType like 'writing' and status like 'finished'
+
+4. used language
+select language,count(_id) as TotalNo from Activity where activityType like 'writing' group by language order by TotalNo desc
+
+
+_________Buying:
+1. total items	2. totalCost
+select sum(price) as TotalCost,count(_id) as TotalItems from Activity where activityType like 'buying'
+
+
+______attending:
+1. TotalFunctions, 2.Totalduration
+select sum(duration) as TotalDuration,count(_id) as TotalFunctions from Activity where activityType like 'attending'
+
+______wastingTime:
+1. positiveRatio
+select count(_id) as PositiveItems from Activity where activityType like 'wasting Time' and result like 'positive'
+
+=positiveItems/TotalItems*100   
+
+2.Duration
+select sum(duration) as TotalDuration,count(_id) as TotalItems from Activity where activityType like 'wasting Time'
+
+
+
+and (select substr(date, 7, 4)||'-'||substr(date, 4,2)||'-'||substr(date, 1,2) from Activity) > date('now','-2 day')
+

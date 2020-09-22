@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/PD_nav_tasks"
+        android:icon="@drawable/ic_task_black"
+        android:title="Tasks" />
+    <item
+        android:id="@+id/PD_nav_info"
+        android:icon="@drawable/ic_details_black_24dp"
+        android:title="Info" />
+    <item
+        android:id="@+id/PD_nav_settings"
+        android:icon="@drawable/ic_settings_black"
+        android:title="Settings" />
+
+</menu>

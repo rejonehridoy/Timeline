@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".NotesDetails">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="8dp">
+
+
+        <ImageView
+            android:layout_gravity="center"
+            android:layout_width="64dp"
+            android:layout_height="64dp"
+            android:src="@drawable/note_create"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="16dp"
+            />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/noteDetails_subject"
+            android:hint="@string/subject"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:textColor="@color/Black"
+                android:enabled="false"
+                />
+
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/noteDetails_description"
+            android:hint="@string/description"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:textColor="@color/Black"
+                android:enabled="false"
+                />
+
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/noteDetails_modifiedDate"
+            android:hint="Edited"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:textColor="@color/Black"
+                android:enabled="false"
+                />
+
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/noteDetails_createdDate"
+            android:hint="Created"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:textColor="@color/Black"
+                android:enabled="false"
+                />
+
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <CheckBox
+            android:id="@+id/noteDetails_addTofav_checkbox"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="60dp"
+            android:text="Add to Favorite"
+            android:enabled="false"
+            android:textColor="@color/Black"
+            android:gravity="center"
+            android:layout_gravity="center|left"
+            android:layout_margin="5dp"/>
+
+        <Button
+            android:id="@+id/noteDetails_btnEdit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="EDIT NOTE"
+            android:visibility="visible"
+            android:background="@color/Black"
+            android:layout_marginTop="8dp"
+            android:textColor="@color/White"
+            />
+        <Button
+            android:id="@+id/noteDetails_btnUpdate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="UPDATE NOTE"
+            android:visibility="gone"
+            tools:visibility="visible"
+            android:background="@color/Black"
+            android:layout_marginTop="8dp"
+            android:textColor="@color/White"
+            />
+        <Button
+            android:id="@+id/noteDetails_btnCancel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="CANCEL"
+            android:visibility="gone"
+            tools:visibility="visible"
+            android:background="@color/Black"
+            android:layout_marginTop="8dp"
+            android:textColor="@color/White"
+            />
+        <Button
+            android:id="@+id/noteDetails_btnDelete"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="DELETE NOTE"
+            android:background="@color/Black"
+            android:layout_marginTop="8dp"
+            android:textColor="@color/White"
+            />
+
+    </LinearLayout>
+
+</LinearLayout>

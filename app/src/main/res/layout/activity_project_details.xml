@@ -1,0 +1,660 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ProjectDetails">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.google.android.material.bottomnavigation.BottomNavigationView
+            android:id="@+id/history_bottomNavigation"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:menu="@menu/project_details_bottom_navigaton"
+            android:layout_alignParentBottom="true"
+            android:elevation="8dp"
+            android:background="?android:attr/windowBackground"/>
+
+        <!--First part layout -->
+
+        <androidx.coordinatorlayout.widget.CoordinatorLayout
+            android:id="@+id/PD_cordinator_layout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="visible"
+            tools:visibility="gone">
+
+            <LinearLayout
+                android:id="@+id/PD_layout_tasks"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginBottom="56dp"
+                android:visibility="visible"
+                tools:visibility="visible">
+
+                <include
+                    android:id="@+id/PD_tasks_toolbar"
+                    layout="@layout/toolbar"/>
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/PD_tasks_recylerView"
+                    android:layout_width="match_parent"
+                    android:layout_margin="4dp"
+                    android:layout_height="wrap_content"/>
+
+
+            </LinearLayout>
+                <com.google.android.material.floatingactionbutton.FloatingActionButton
+                    android:id="@+id/PD_btnAdd"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom|end"
+                    android:layout_marginBottom="88dp"
+                    android:layout_marginRight="40dp"
+                    android:src="@drawable/add_white" />
+
+
+            </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+
+
+
+        <!--Second part layout -->
+        <LinearLayout
+            android:id="@+id/PD_layout_Info"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:layout_marginBottom="56dp"
+            android:visibility="gone"
+            tools:visibility="visible">
+
+            <include
+                android:id="@+id/PD_info_toolbar"
+                layout="@layout/toolbar"/>
+
+            <androidx.core.widget.NestedScrollView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="8dp"
+                    android:orientation="vertical">
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/PD_info_name"
+                        android:hint="@string/project_name"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/PD_info_name_input"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:enabled="false"
+                            android:textColor="@color/Black"
+                            />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/PD_info_category"
+                        android:hint="@string/category"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/PD_info_category_input"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:inputType="text"
+                            android:enabled="false"
+                            android:textColor="@color/Black"
+                            />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/PD_info_description"
+                        android:hint="@string/description"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/PD_info_description_input"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:enabled="false"
+                            android:textColor="@color/Black"
+                            />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/PD_info_framework"
+                        android:hint="@string/framework"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/PD_info_framework_input"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:enabled="false"
+                            android:textColor="@color/Black"
+                            />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/PD_info_platform"
+                        android:hint="@string/platform"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/PD_info_platform_input"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+
+                            android:enabled="false"
+                            android:textColor="@color/Black"
+                            />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/PD_info_requirement"
+                        android:hint="@string/requirement"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/PD_info_requirement_input"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+
+                            android:enabled="false"
+                            android:textColor="@color/Black"
+                            />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/PD_info_prerequisite"
+                        android:hint="@string/prerequisite"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/PD_info_prerequisite_input"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:enabled="false"
+                            android:textColor="@color/Black"
+                            />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/PD_info_status"
+                        android:hint="@string/status"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/PD_info_status_input"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:inputType="text"
+                            android:enabled="false"
+                            android:textColor="@color/Black"
+                            />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.toptoche.searchablespinnerlibrary.SearchableSpinner
+                        android:id="@+id/PD_info_status_spinner"
+                        android:layout_width="match_parent"
+                        android:visibility="gone"
+                        tools:visibility="visible"
+                        android:layout_marginTop="3dp"
+                        android:background="@drawable/spinner_design"
+                        android:layout_height="50dp"
+                        />
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/PD_info_startingDate"
+                        android:hint="@string/starting_date"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/PD_info_startingDate_input"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:inputType="text"
+                            android:enabled="false"
+                            android:textColor="@color/Black"
+                            />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/PD_info_endDate"
+                        android:hint="@string/end_date"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/PD_info_endDate_input"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:enabled="false"
+                            android:textColor="@color/Black"
+                            />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:layout_weight="1"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/PD_info_totalTasks"
+                            android:hint="@string/total_tasks"
+                            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/PD_info_totalTasks_input"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:enabled="false"
+                                android:textColor="@color/Black"
+                                />
+
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:layout_weight="1"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/PD_info_totalTaskPoints"
+                            android:hint="@string/total_task_points"
+                            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/PD_info_totalTaskPoints_input"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:enabled="false"
+                                android:textColor="@color/Black"
+                                />
+
+                        </com.google.android.material.textfield.TextInputLayout>
+
+
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:layout_weight="1"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/PD_info_completedTasks"
+                            android:hint="@string/completed_tasks"
+                            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/PD_info_completedTasks_input"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:enabled="false"
+                                android:textColor="@color/Black"
+                                />
+
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:layout_weight="1"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/PD_info_completedTaskPoints"
+                            android:hint="@string/completed_task_points"
+                            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/PD_info_completedTaskPoints_input"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:enabled="false"
+                                android:textColor="@color/Black"
+                                />
+
+                        </com.google.android.material.textfield.TextInputLayout>
+
+
+                    </LinearLayout>
+
+
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/PD_info_completedTaskRatio"
+                        android:hint="@string/task_completed_ratio"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/PD_info_completedTaskRatio_input"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:enabled="false"
+                            android:textColor="@color/Black"
+                            />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/PD_info_modifiedDate"
+                        android:hint="@string/last_modified_date"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/PD_info_modifiedDate_input"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:enabled="false"
+                            android:textColor="@color/Black"
+                            />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/PD_info_modifiedUser"
+                        android:hint="@string/modified_by"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/PD_info_modifiedUser_input"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:enabled="false"
+                            android:textColor="@color/Black"
+                            />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/PD_info_createdDate"
+                        android:hint="@string/created_date"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/PD_info_createdDate_input"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:enabled="false"
+                            android:textColor="@color/Black"
+                            />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/PD_info_createdUser"
+                        android:hint="@string/created_by"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/PD_info_createdUser_input"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:enabled="false"
+                            android:textColor="@color/Black"
+                            />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <Button
+                        android:id="@+id/PD_info_btnEdit"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="EDIT PROJECT INFO"
+                        android:background="@color/Black"
+                        android:textColor="@color/White"
+                        android:layout_marginTop="4dp"
+                        />
+
+                    <Button
+                        android:id="@+id/PD_info_btnUpdate"
+                        android:layout_width="match_parent"
+                        android:visibility="gone"
+                        tools:visibility="visible"
+                        android:layout_height="wrap_content"
+                        android:text="UPDATE PROJECT INFO"
+                        android:background="@color/Black"
+                        android:textColor="@color/White"
+                        android:layout_marginTop="4dp"
+                        />
+
+
+                </LinearLayout>
+
+            </androidx.core.widget.NestedScrollView>
+
+        </LinearLayout>
+
+
+        <!--Third part layout -->
+        <LinearLayout
+            android:id="@+id/PD_layout_Setting"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:layout_marginBottom="56dp"
+            android:visibility="gone"
+            tools:visibility="gone">
+
+            <include
+                android:id="@+id/PD_setting_toolbar"
+                layout="@layout/toolbar"/>
+
+            <androidx.core.widget.NestedScrollView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_margin="8dp">
+
+
+                    <LinearLayout
+                        android:id="@+id/PD_settings_members_layout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="4dp"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_weight="6"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:text="Team Members"
+                                android:layout_gravity="center"
+                                android:textColor="@color/Black"
+                                android:textSize="20sp"/>
+                            <Button
+                                android:id="@+id/PD_settings_btnAddNew"
+                                android:layout_weight="1"
+                                android:layout_width="0dp"
+                                android:text="ADD"
+                                android:textColor="@color/White"
+                                android:background="@color/Black"
+                                android:layout_height="match_parent"/>
+
+                        </LinearLayout>
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:background="@android:color/darker_gray"/>
+
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/PD_settings_members_recylerView"
+                            android:layout_width="match_parent"
+                            android:layout_margin="4dp"
+                            android:layout_height="wrap_content"/>
+
+                        <LinearLayout
+                            android:id="@+id/PD_setting_AddUpdatemember_layout"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:visibility="gone"
+                            tools:visibility="visible"
+                            android:orientation="vertical">
+
+                            <com.google.android.material.textfield.TextInputLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:id="@+id/PD_setting_memberName"
+                                android:hint="Member Name"
+                                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+
+                                <androidx.appcompat.widget.AppCompatAutoCompleteTextView
+                                    android:id="@+id/PD_settings_memberName_ACTV"
+                                    android:layout_width="match_parent"
+                                    android:hint="@string/member_name"
+                                    android:layout_marginLeft="4dp"
+                                    android:layout_height="56dp"
+                                    android:textColor="@color/Black"
+                                    android:completionThreshold="1"
+                                    android:completionHint="Member Username"
+                                    android:inputType="text"/>
+
+                            </com.google.android.material.textfield.TextInputLayout>
+
+                            <com.toptoche.searchablespinnerlibrary.SearchableSpinner
+                                android:id="@+id/PD_setting_role_spinner"
+                                android:layout_width="match_parent"
+                                android:visibility="gone"
+                                tools:visibility="visible"
+                                android:layout_marginTop="3dp"
+                                android:background="@drawable/spinner_design"
+                                android:layout_height="50dp"
+                                />
+
+                            <Button
+                                android:id="@+id/PD_setting_btnUpdateMember"
+                                android:layout_width="match_parent"
+                                android:visibility="gone"
+                                tools:visibility="visible"
+                                android:layout_height="wrap_content"
+                                android:text="UPDATE"
+                                android:background="@color/Black"
+                                android:textColor="@color/White"
+                                android:layout_marginTop="4dp"
+                                />
+                            <Button
+                                android:id="@+id/PD_setting_btnAddMember"
+                                android:layout_width="match_parent"
+                                android:visibility="gone"
+                                tools:visibility="visible"
+                                android:layout_height="wrap_content"
+                                android:text="ADD Member"
+                                android:background="@color/Black"
+                                android:textColor="@color/White"
+                                android:layout_marginTop="4dp"
+                                />
+                            <Button
+                                android:id="@+id/PD_setting_btnDeleteMember"
+                                android:layout_width="match_parent"
+                                android:visibility="gone"
+                                tools:visibility="visible"
+                                android:layout_height="wrap_content"
+                                android:text="DELETE Member"
+                                android:background="@color/Black"
+                                android:textColor="@color/White"
+                                android:layout_marginTop="4dp"
+                                />
+                            <Button
+                                android:id="@+id/PD_setting_btnCancel"
+                                android:layout_width="match_parent"
+                                android:visibility="gone"
+                                tools:visibility="visible"
+                                android:layout_height="wrap_content"
+                                android:text="CANCEL"
+                                android:background="@color/Black"
+                                android:textColor="@color/White"
+                                android:layout_marginTop="4dp"
+                                />
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+
+                <Button
+                    android:id="@+id/PD_setting_btnDeleteProject"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="4dp"
+                    android:visibility="gone"
+                    tools:visibility="visible"
+                    android:text="DELETE PROJECT"
+                    android:textStyle="bold"
+                    android:background="@color/White"
+                    android:textColor="@color/Red"/>
+
+
+
+                </LinearLayout>
+
+            </androidx.core.widget.NestedScrollView>
+
+        </LinearLayout>
+
+
+
+    </RelativeLayout>
+</LinearLayout>

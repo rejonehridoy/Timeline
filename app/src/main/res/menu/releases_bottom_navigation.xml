@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/releases_nav_all"
+        android:icon="@drawable/ic_details_black_24dp"
+        android:title="All" />
+    <item
+        android:id="@+id/releases_nav_latest"
+        android:icon="@drawable/ic_favourite_black"
+        android:title="Latest" />
+</menu>

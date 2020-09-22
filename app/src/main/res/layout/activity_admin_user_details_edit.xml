@@ -1,0 +1,325 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AdminUserDetailsEdit">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_margin="8dp">
+
+        <ImageView
+            android:id="@+id/AUDE_avater"
+            android:src="@drawable/profile_avater_hacker"
+            android:layout_gravity="center"
+            android:layout_margin="8dp"
+            android:padding="4dp"
+            android:layout_width="64dp"
+            android:background="@drawable/spinner_design"
+            android:layout_height="64dp"/>
+
+        <TextView
+            android:id="@+id/AUDE_fullName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Rejone E Rasul Hridoy"
+            android:textStyle="bold"
+            android:textSize="25sp"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:textColor="@color/Black"
+            android:layout_marginBottom="8dp"
+            />
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/AUDE_lastVisit"
+            android:hint="Last Visit"
+            android:textColorHint="@color/ThemeColor"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:textColor="@color/Black"
+                android:enabled="false"
+                />
+
+        </com.google.android.material.textfield.TextInputLayout>
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/AUDE_userName"
+            android:hint="@string/username"
+            android:textColorHint="@color/ThemeColor"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:textColor="@color/Black"
+                android:enabled="false"
+                />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/AUDE_email"
+            android:hint="@string/email"
+            android:textColorHint="@color/ThemeColor"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:textColor="@color/Black"
+                android:enabled="false"
+                />
+
+        </com.google.android.material.textfield.TextInputLayout>
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/AUDE_uid"
+            android:hint="Uid"
+            android:textColorHint="@color/ThemeColor"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:textColor="@color/Black"
+                android:enabled="false"
+                />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/AUDE_phone"
+            android:hint="@string/phone"
+            android:textColorHint="@color/ThemeColor"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:textColor="@color/Black"
+                android:enabled="false"
+                />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/AUDE_gender"
+            android:hint="@string/gender"
+            android:textColorHint="@color/ThemeColor"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:textColor="@color/Black"
+                android:enabled="false"
+                />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/AUDE_dateOfBirth"
+            android:hint="Date of Birth"
+            android:textColorHint="@color/ThemeColor"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:textColor="@color/Black"
+                android:enabled="false"
+                />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_weight="8"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/AUDE_password"
+                android:hint="@string/password"
+                android:textColorHint="@color/ThemeColor"
+                app:passwordToggleEnabled="true"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/AUDE_pasword_input"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="0123456789"
+                    android:textColor="@color/Black"
+                    android:singleLine="true"
+                    android:enabled="false"
+                    android:inputType="textPassword"/>
+
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <Button
+                android:id="@+id/AUDE_btnPasswordDecrpt"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_margin="7dp"
+                android:layout_height="46dp"
+                android:background="@drawable/unlockx32"/>
+
+
+
+
+        </LinearLayout>
+
+        <com.toptoche.searchablespinnerlibrary.SearchableSpinner
+            android:id="@+id/AUDE_status_spinner"
+            android:layout_width="match_parent"
+            android:layout_marginTop="3dp"
+            android:background="@drawable/spinner_design"
+            android:layout_height="46dp"/>
+
+        <com.toptoche.searchablespinnerlibrary.SearchableSpinner
+            android:id="@+id/AUDE_userType_spinner"
+            android:layout_width="match_parent"
+            android:layout_marginTop="3dp"
+            android:background="@drawable/spinner_design"
+            android:layout_height="46dp"/>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/AUDE_createdDate"
+            android:hint="Account Created"
+            android:textColorHint="@color/ThemeColor"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:textColor="@color/Black"
+                android:enabled="false"
+                />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_weight="8"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/AUDE_recoveryQestion"
+                android:hint="Recovery Question"
+                android:textColorHint="@color/ThemeColor"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:textColor="@color/Black"
+                    android:enabled="false" />
+
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <Button
+                android:id="@+id/AUDE_btnRecoveryQuestion"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_margin="7dp"
+                android:layout_height="46dp"
+                android:background="@drawable/unlockx32"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_weight="8"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/AUDE_recoveryAns"
+                android:hint="Recovery Answer"
+                android:textColorHint="@color/ThemeColor"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:textColor="@color/Black"
+                    android:enabled="false" />
+
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <Button
+                android:id="@+id/AUDE_btnRecoveryAns"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_margin="7dp"
+                android:layout_height="46dp"
+                android:background="@drawable/unlockx32"/>
+
+
+
+
+        </LinearLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/AUDE_recoveryDate"
+            android:hint="Recovery Date"
+            android:textColorHint="@color/ThemeColor"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:textColor="@color/Black"
+                android:enabled="false"
+                />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <Button
+            android:id="@+id/AUDE_btnUpdate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="UPDATE"
+            android:background="#000000"
+            android:layout_marginTop="8dp"
+            android:textColor="#fff"
+            android:textStyle="bold"/>
+
+
+    </LinearLayout>
+
+</ScrollView>

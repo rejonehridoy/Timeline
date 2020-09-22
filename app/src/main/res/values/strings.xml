@@ -1,0 +1,329 @@
+<resources>
+    <string name="app_name">Timeline</string>
+    <string name="name">Name</string>
+    <string name="problem_name">Problem Name</string>
+    <string name="product_name">Product Name</string>
+    <string name="category">Category</string>
+    <string name="place">Place</string>
+    <string name="price">Price</string>
+    <string name="year">Year</string>
+    <string name="release_year">Release Year</string>
+    <string name="your_team_name">Your Team Name</string>
+    <string name="opponent_team_name">Opponent Team Name</string>
+    <string name="language">Language</string>
+    <string name="result">Result</string>
+    <string name="review">Review</string>
+    <string name="review_10">Review (Out of 10)</string>
+    <string name="submit">SUBMIT</string>
+    <string name="additonal_notes">Additional Notes</string>
+    <string name="organiser">Organiser</string>
+    <string name="difficulty">Difficulty</string>
+    <string name="algoithm">Algorithm</string>
+    <string name="wating_how">How you are wasting your time?</string>
+    <string name="phone">Phone</string>
+    <string name="email">Email</string>
+    <string name="gender">Gender</string>
+    <string name="status">Status</string>
+    <string name="developer_email">rejone.hridoy@gmail.com</string>
+    <string name="developer_phone">01521436593</string>
+    <string name="password">Password</string>
+    <string name="game_mode">Game Mode</string>
+    <string name="duration">Duration</string>
+    <string name="history_item_title_demo">You were watching Avengers: endgame (2019)</string>
+    <string name="project_name">Project Name</string>
+    <string name="description">Description</string>
+    <string name="framework">Framework</string>
+    <string name="platform">Platform</string>
+    <string name="requirement">Requirement</string>
+    <string name="prerequisite">Prerequisite</string>
+    <string name="add_project_member">Add Project Member</string>
+    <string name="member_name">Member Name</string>
+    <string name="task_name">Task Name</string>
+    <string name="task_serial">Task Serial</string>
+    <string name="solution">Solution</string>
+    <string name="deadline">Deadline</string>
+    <string name="assigning_to">Assigning To</string>
+    <string name="priority">Priority</string>
+    <string name="comments">Comments</string>
+    <string name="created_user">Created User</string>
+    <string name="modified_user">Modified User</string>
+    <string name="modified_date">Modified Date</string>
+    <string name="created_date">Created Date</string>
+    <string name="created_by">Created By</string>
+    <string name="modified_by">Modified By</string>
+    <string name="total_task_points">Total Task Points</string>
+    <string name="total_tasks">Total Tasks</string>
+    <string name="completed_tasks">Completed Tasks</string>
+    <string name="completed_task_points">Completed Task Points</string>
+    <string name="task_completed_ratio">Task Completed Ratio</string>
+    <string name="starting_date">Starting Date</string>
+    <string name="end_date">End Date</string>
+    <string name="last_modified_date">Last Modified Date</string>
+    <string name="new_password_message">Hey User, enter your new password</string>
+    <string name="subject">Subject</string>
+    <string name="username">Username</string>
+    <string name="recover_question">Recover Question</string>
+    <string name="recover_answer">Recover Answer</string>
+    <string name="release_date">Release Date</string>
+    <string name="download_link">Download Link</string>
+
+    <string-array name="SU_gender_string">
+        <item>Gender</item>
+        <item>Male</item>
+        <item>Female</item>
+    </string-array>
+
+    <string-array name="EP_gender_string">
+        <item>Male</item>
+        <item>Female</item>
+    </string-array>
+
+    <string-array name="EP_recoveryQuestion_spinner">
+        <item>What Is your favorite book?</item>
+        <item>What is the name of the road you grew up on?</item>
+        <item>What is your mothers maiden name?</item>
+        <item>What is your favorite food?</item>
+        <item>What was the name of your first pet?</item>
+        <item>What city were you born in?</item>
+        <item>Where did you go to high school/college?</item>
+        <item>Where did you meet your spouse?</item>
+    </string-array>
+
+    <string-array name="EP_avater_string">
+        <item>Boy 1</item>
+        <item>Boy 2</item>
+        <item>Girl 1</item>
+        <item>Girl 2</item>
+        <item>Hacker</item>
+        <item>Lifeguard</item>
+        <item>Male</item>
+        <item>Men</item>
+        <item>Women</item>
+    </string-array>
+
+
+    <string-array name="activity_string">
+        <item>Select a activity</item>
+        <item>Watching</item>
+        <item>Eating</item>
+        <item>Playing</item>
+        <item>Working</item>
+        <item>Reading</item>
+        <item>Writing</item>
+        <item>Solving</item>
+        <item>Attending</item>
+        <item>Buying</item>
+        <item>Wasting time</item>
+
+    </string-array>
+    <string-array name="watching_category_string">
+        <item>Movie</item>
+        <item>TV Series</item>
+        <item>Drama</item>
+        <item>Tutorial</item>
+        <item>Video Lecture</item>
+        <item>You tube videos</item>
+
+    </string-array>
+
+    <string-array name="watching_language_string">
+        <item>English</item>
+        <item>Hindi</item>
+        <item>German</item>
+        <item>Bangla</item>
+        <item>Spanish</item>
+        <item>French</item>
+        <item>Korean</item>
+        <item>Chinese</item>
+        <item>Tamil</item>
+        <item>Telegu</item>
+        <item>Malaylum</item>
+    </string-array>
+
+    <string-array name="eating_category_string">
+        <item>Breakfast</item>
+        <item>Lunch</item>
+        <item>Afternoon Meal</item>
+        <item>Dinner</item>
+
+    </string-array>
+
+    <string-array name="playing_name_string">
+        <item>Football</item>
+        <item>Cricket</item>
+        <item>Apex Legend</item>
+        <item>Call Of Duty</item>
+        <item>CS:GO</item>
+        <item>DOTA</item>
+        <item>Apex Legend</item>
+        <item>FIFA</item>
+        <item>FORTNIGHT</item>
+        <item>GTA V</item>
+        <item>Ludo</item>
+        <item>PUBG</item>
+        <item>The Witcher</item>
+        <item>Valorant</item>
+        <item>Other</item>
+    </string-array>
+
+    <string-array name="playing_status_string">
+        <item>Win</item>
+        <item>Lose</item>
+        <item>Draw</item>
+        <item>Position #</item>
+        <item>No Result</item>
+    </string-array>
+
+    <string-array name="working_status_string">
+        <item>In Progress</item>
+        <item>Completed</item>
+        <item>Incompleted</item>
+        <item>Cancelled</item>
+    </string-array>
+
+    <string-array name="reading_catergory_string">
+        <item>Story Book</item>
+        <item>Study</item>
+        <item>Comics</item>
+        <item>History</item>
+        <item>Literature</item>
+        <item>Novel</item>
+        <item>Drama</item>
+        <item>Poetry</item>
+        <item>Newspaper</item>
+    </string-array>
+
+    <string-array name="reading_status_string">
+        <item>In progress</item>
+        <item>Finished</item>
+        <item>Unfinshed</item>
+    </string-array>
+
+    <string-array name="writing_status_string">
+        <item>In progress</item>
+        <item>Finished</item>
+        <item>Unfinshed</item>
+        <item>Cancelled</item>
+    </string-array>
+
+    <string-array name="solving_language_string">
+        <item>C</item>
+        <item>C++</item>
+        <item>C#</item>
+        <item>Java</item>
+        <item>Java Script</item>
+        <item>PHP</item>
+        <item>Python</item>
+        <item>Ruby</item>
+        <item>SQL</item>
+        <item>Swift</item>
+    </string-array>
+
+    <string-array name="solving_result_string">
+        <item>Accepted (AC)</item>
+        <item>Presentation Error (PE)</item>
+        <item>Wrong Answer (WA)</item>
+        <item>Compile Error (CE)</item>
+        <item>Runtime Error (RE)</item>
+        <item>Time Limit Exceeded (TLE)</item>
+        <item>Memory Limit Exceeded (MLE)</item>
+        <item>Output Limit Exceeded (OLE)</item>
+        <item>Submission Error (SE)</item>
+        <item>Restricted Function (RF)</item>
+        <item>Can not Be Judged (CJ)</item>
+        <item>In Queue (QU)</item>
+
+    </string-array>
+
+    <string-array name="solving_status_string">
+        <item>In Progress</item>
+        <item>Finished</item>
+        <item>Unfinished</item>
+        <item>Fed up</item>
+    </string-array>
+
+    <string-array name="wastingTime_result">
+        <item>Positive</item>
+        <item>Negative</item>
+        <item>Neutral</item>
+    </string-array>
+
+    <string-array name="ANC_repetation_string">
+        <item>Once</item>
+        <item>Weekly</item>
+    </string-array>
+
+    <string-array name="ANC_dayOfWeek_string">
+        <item>Sunday</item>
+        <item>Monday</item>
+        <item>Tuesday</item>
+        <item>Wednesday</item>
+        <item>Thursday</item>
+        <item>Friday</item>
+        <item>Saturday</item>
+    </string-array>
+
+    <string-array name="project_status_stirng">
+        <item>Not Started</item>
+        <item>In Progress</item>
+        <item>Completed</item>
+        <item>In Completed</item>
+        <item>Cancelled</item>
+    </string-array>
+
+    <string-array name="project_member_role_string">
+        <item>Leader</item>
+        <item>Co-Leader</item>
+        <item>Manager</item>
+        <item>Member</item>
+        <item>Developer</item>
+        <item>Tester</item>
+    </string-array>
+
+    <string-array name="task_category_string">
+        <item>Task</item>
+        <item>Epic</item>
+        <item>Story</item>
+        <item>Bug</item>
+    </string-array>
+
+    <string-array name="task_status_string">
+        <item>To Do</item>
+        <item>Working</item>
+        <item>Done</item>
+        <item>Cancelled</item>
+    </string-array>
+    <string-array name="task_priority_string">
+        <item>Urgent</item>
+        <item>High</item>
+        <item>Medium</item>
+        <item>Low</item>
+    </string-array>
+
+    <string-array name="history_analysis_string">
+        <item>All time analysis</item>
+        <item>Last 7 days</item>
+        <item>Last 14 days</item>
+        <item>Last 21 days</item>
+        <item>Last 1 month</item>
+        <item>Last 2 months</item>
+        <item>Last 3 months</item>
+        <item>Last 6 months</item>
+        <item>Last 1 year</item>
+        <item>Last 2 years</item>
+    </string-array>
+
+    <string-array name="user_status_string">
+        <item>Active</item>
+        <item>Temporary</item>
+        <item>Disable</item>
+        <item>Verified</item>
+    </string-array>
+
+    <string-array name="user_type_string">
+        <item>User</item>
+        <item>Admin</item>
+        <item>Moderator</item>
+        <item>Content Writer</item>
+    </string-array>
+</resources>
